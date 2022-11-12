@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import Home from './Screens/Home';
+import AScreen from "./Screens/AScreen";
+import BScreen from "./Screens/BScreen";
+import CScreen from "./Screens/CScreen";
+import DScreen from "./Screens/DScreen";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} ></Route>
+          <Route path="/a-screen" element={<AScreen />} />
+          <Route path="/b-screen" element={<BScreen />} />
+          <Route path="/c-screen" element={<CScreen />} />
+          <Route path="/d-screen" element={<DScreen />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+
